@@ -14,11 +14,6 @@ class Computers extends Controller
      */
     private $request;
 
-    /**
-     * @var $computersModel ComputersModel 
-     */
-    private $computersModel;
-
     private $result = [];
 
     private $storage_sizes = [
@@ -34,7 +29,7 @@ class Computers extends Controller
     public function index(Request $request): array
     {
         $this->request = $request;
-        $this->result = $this->fetch_result();
+        $this->result = resolve(ComputersModel::class)->list();
 
         try {
             if ($this->request->has('filter')) {
@@ -47,12 +42,6 @@ class Computers extends Controller
         }
 
         return array_values($this->result);
-    }
-
-    private function fetch_result(): array
-    {
-        $this->computersModel = resolve(ComputersModel::class);
-        return $this->computersModel->list();
     }
 
     private function parse_filter_parameters(): void
