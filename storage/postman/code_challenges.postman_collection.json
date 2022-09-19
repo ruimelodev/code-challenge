@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "20403b31-1e2c-4722-881b-df827e29bb1c",
+		"name": "Code Challenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2324060"
+	},
+	"item": [
+		{
+			"name": "velv - api/computers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/computers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"computers"
+					],
+					"query": [
+						{
+							"key": "filter[storage_min_size]",
+							"value": "2TB",
+							"description": "Values: 0, 250GB, 500GB, 1TB, 2TB, 3TB, 4TB, 8TB, 12TB, 24TB, 48TB, 72TB",
+							"disabled": true
+						},
+						{
+							"key": "filter[storage_max_size]",
+							"value": "2TB",
+							"description": "Values: 0, 250GB, 500GB, 1TB, 2TB, 3TB, 4TB, 8TB, 12TB, 24TB, 48TB, 72TB",
+							"disabled": true
+						},
+						{
+							"key": "filter[storage_type]",
+							"value": "SATA2",
+							"description": "Values: SAS, SATA, SSD",
+							"disabled": true
+						},
+						{
+							"key": "filter[memory_size]",
+							"value": "2GB,4GB,8GB,12GB,16GB,24GB,32GB,48GB,64GB,96GB",
+							"description": "Values: 2GB, 4GB, 8GB, 12GB, 16GB, 24GB, 32GB, 48GB, 64GB, 96GB",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
